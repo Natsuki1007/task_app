@@ -19,25 +19,25 @@
   </thead>
 
   <tbody>
-    <% @users.each do |user| %>
+    <% @tasks.each do |task| %>
       <tr>
-        <td><%= user.id %></td>
-        <td><%= user.title %></td>
-        <td><%= user.start %></td>
-        <td><%= user.finish %></td>
-        <td><%= user.updated_at.to_s(:datetime_jp) %></td>
+        <td><%= task.id %></td>
+        <td><%= task.title %></td>
+        <td><%= task.start %></td>
+        <td><%= task.finish %></td>
+        <td><%= task.updated_at.to_s(:datetime_jp) %></td>
         <td>
-          <%= link_to "確認", user %>
+          <%= link_to "確認", task %>
         </td>
         <td>
-          <%= link_to "編集", [:edit, user] %>
+          <%= link_to "編集", [:edit, task] %>
         </td>
         <td>
-          <%= link_to "削除", user, method: :delete, data:{confirm: "本当に削除しますか？"} %>
+          <%= link_to "削除", task, method: :delete, data:{confirm: "本当に削除しますか？"} %>
         </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<p><%= link_to "スケジュール新規作成", :new_user %></p>
+<p><%= link_to "スケジュール新規作成", :new_task %></p>
